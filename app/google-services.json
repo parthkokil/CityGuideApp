@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "987706656536",
+    "project_id": "nashik-cityguide",
+    "storage_bucket": "nashik-cityguide.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:987706656536:android:06ec76785fccb4f84f406d",
+        "android_client_info": {
+          "package_name": "com.example.nashik_cityguide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "987706656536-0kn5dr1de4b5tdm140n3juvijeg0srtu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZUnmEQfUuAfO8_zs_Ic7kCFoatR8NtN0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "987706656536-0kn5dr1de4b5tdm140n3juvijeg0srtu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

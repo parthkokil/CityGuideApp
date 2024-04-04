@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">City Guide</string>
+    <string name="Gender">Select Gender</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    //Coding With Tea
+    <string name="app_slogan">Navigate Through City</string>
+    <string name="app_name_title">City Guide</string>
+    <string name="slogan_name">We will help you to find your way</string>
+    <string name="powered_by">Powered by Team City Guide</string>
+
+    <!-- Strings for On Boarding Screen -->
+
+    <!--Titles-->
+    <string name="first_slide_title">Search Your Location</string>
+    <string name="second_slide_title">Make A Call</string>
+    <string name="third_slide_title">Add Missing Place</string>
+    <string name="fourth_slide_title">Sit Back And Enjoy</string>
+
+    <!--Descriptions-->
+    <string name="first_slide_desc">You can search any place nearby or with-in the specified city. We will display specific or all related shops to match your search. </string>
+    <string name="second_slide_desc">We provide almost all the numbers of all departments and shops registered with us. You can perform bookings as well.</string>
+    <string name="third_slide_desc">If you have a shop or somethings and want to be a part of our growing industry then add your place by following simple steps.</string>
+    <string name="fourth_slide_desc">We will handle everything for you. As you have the app in your pocket then you do not have to worry about anything.  </string>
+
+    <!--Buttons-->
+    <string name="skip_btn">Skip</string>
+    <string name="next_btn">Next</string>
+    <string name="let_get_started">Lets Get Started</string>
+    <!--Categories-->
+    <string name="hotels">Hotels</string>
+    <string name="restaurents">Restaurants</string>
+    <string name="Place">Tourist Place</string>
+    <string name="Transport">Transport</string>
+    <string name="Emergency">Emergency</string>
+    <!--Titles and Descriptions-->
+    <string name="featured_locations">All featured Locations</string>
+    <string name="featured_locations_description">All the locations that are featured and have the top demand in town!</string>
+    <string name="most_viewed_location">Most Viewed</string>
+    <string name="categories">Categories</string>
+    <string name="view_all">View All</string>
+    <string name="search_text">Search...</string>
+
+    <!--general strings-->
+    <string name="sign_up">Sign Up</string>
+    <string name="retailer_heading">Grow \n Your Business</string>
+    <string name="retailer_tag_line">We will help you to grow your business using online services!</string>
+    <string name="create_account">Create\nAccount</string>
+    <string name="how_we_work">How we work?</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="otp_code_text">Co\de</string>
+    <string name="title_activity_map">MapActivity</string>
+
+    <!--Police Guidelines strings-->
+    <string name="police_Guidelines_1">1. Reporting Suspicious Activity :\nCitizens are encouraged to report any suspicious activity they observe to the police. This can include things like unfamiliar people or vehicles in the neighborhood, unusual noises, or suspicious behavior.</string>
+    <string name="police_Guidelines_2">2. Locking Doors and Windows :\nCitizens are advised to keep doors and windows locked at all times, even when they are at home. This can help prevent burglaries and home invasions.</string>
+    <string name="police_Guidelines_3">3. Using Alarms and Security Systems:\nCitizens may be encouraged to install alarms and security systems in their homes to deter burglars and alert the police in the event of a break-in.</string>
+    <string name="police_Guidelines_4">4. Parking Safety:\nCitizens are advised to park in well-lit areas and to lock their cars when they leave them. Valuables should be kept out of sight to reduce the risk of theft.</string>
+    <string name="police_Guidelines_5">5. Obeying Traffic Laws:\nCitizens are advised to obey traffic laws and to wear seat belts while driving. They may also be reminded of the dangers of driving under the influence of drugs or alcohol.</string>
+
+    <!--Bus Terminals Guidelines strings-->
+    <string name="busTerminal_guideline_1">1. Arrive early:\nArrive at the bus station early to ensure that you have plenty of time to find your bus and board it.</string>
+    <string name="busTerminal_guideline_2">2. Know your bus number:\nMake sure you know the bus number and destination of the bus you want to board. Check the bus schedule and platform information to make sure you get on the right bus.</string>
+    <string name="busTerminal_guideline_3">3. Keep your belongings with you:\nKeep your bags and belongings with you at all times. Don\'t leave them unattended, as this could create a security risk.</string>
+    <string name="busTerminal_guideline_4">4. Be aware of your surroundings:\nBe aware of your surroundings and stay alert at all times. If you see anything suspicious or concerning, report it to the bus station staff or the police.</string>
+    <string name="busTerminal_guideline_5">5. Respect other passengers:\nBe respectful of other passengers. Keep your noise level down and avoid bothering others.</string>
+</resources>
+

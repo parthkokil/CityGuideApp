@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Nashik_CityGuide"
+        tools:targetApi="31">
+        <activity
+            android:name=".PlaceFav_Activity.placeFav_activity"
+            android:exported="false" />
+        <activity
+            android:name=".hotelFav_Activity.hotelFav_activity"
+            android:exported="false" />
+        <activity
+            android:name=".RestFav_Activity.restFav_activity"
+            android:exported="false" />
+        <activity
+            android:name=".successful_pass_screen"
+            android:exported="false" />
+        <activity
+            android:name=".FireBrigade_Activity.fire_brigade"
+            android:exported="false" />
+        <activity
+            android:name=".Ambulance_Activity.ambulance"
+            android:exported="false" />
+        <activity
+            android:name=".PoliceStation_Activity.police_station"
+            android:exported="false" />
+        <activity
+            android:name=".Flight_Activity.flight_airport"
+            android:exported="false" />
+        <activity
+            android:name=".Railway_Activity.railway_station"
+            android:exported="false" />
+        <activity
+            android:name=".Bus_Activity.bus_terminal"
+            android:exported="false" />
+        <activity
+            android:name=".All_categories"
+            android:exported="false" />
+        <activity
+            android:name=".transport_category"
+            android:exported="false" />
+        <activity
+            android:name=".Place_Activity.touristPlaces_category"
+            android:exported="false" />
+        <activity
+            android:name=".emergency_category"
+            android:exported="false" />
+        <activity
+            android:name=".Hotel_Activity.hotels_category"
+            android:exported="false" />
+        <activity
+            android:name=".Restaurant_Activity.restaurant_category"
+            android:exported="false" />
+        <activity
+            android:name=".Update_Activity.update_profile"
+            android:exported="false" />
+        <activity
+            android:name=".Update_Activity.update_profile_photo"
+            android:exported="false" />
+        <activity
+            android:name=".Update_Activity.update_email"
+            android:exported="false" />
+        <activity
+            android:name=".change_password"
+            android:exported="false" />
+        <activity
+            android:name=".recover_pass"
+            android:exported="false" />
+        <activity
+            android:name=".enter_otp"
+            android:exported="false" />
+        <activity
+            android:name=".main_ui"
+            android:exported="false" />
+        <activity
+            android:name=".signIn_signUp_Activity.signup_activity"
+            android:exported="false" />
+        <activity
+            android:name=".signIn_signUp_Activity.signin_activity"
+            android:exported="false" />
+        <activity
+            android:name=".signIn_signUp_Activity.signin_signup"
+            android:exported="false" />
+        <activity
+            android:name=".Splash_screen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".signIn_signUp_Activity.signin_signup"
+    android:background="@color/white"
+    android:layout_gravity="center"
+    android:padding="15dp">
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:elevation="10dp"
+        android:visibility="gone">
+    </ProgressBar>
+
+    <ImageView
+        android:id="@+id/back_arrow"
+        android:layout_width="40dp"
+        android:layout_height="70dp"
+        android:src="@drawable/back_arrow"
+        android:paddingTop="25dp"
+        android:layout_marginLeft="10dp">
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/logo">
+    </ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/hotel_info_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/first"
+            android:paddingLeft="10dp"
+            android:textColor="@color/black"
+            android:text="Hotel Name"
+            android:textAllCaps="true"
+            android:layout_marginTop="100dp"
+            android:textSize="28dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/image_slider_hotel"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_height="200dp"
+                app:iss_auto_cycle="true"
+                app:iss_delay="1000"
+                app:iss_period="1000"
+                android:elevation="10dp">
+            </com.denzcoskun.imageslider.ImageSlider>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/image_slider_hotel"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp">
+
+                <ImageView
+                    android:id="@+id/fav"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/fav_border_image">
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/maps"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/map_image">
+                </ImageView>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/andika_new_basic_italic"
+            android:textColor="@color/light_maroon"
+            android:paddingLeft="10dp"
+            android:text="Details : ">
+        </TextView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/hotel_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/andika_new_basic_italic"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="@color/black"
+                    android:paddingLeft="10dp"
+                    android:text="Address : ">
+                </TextView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/light_maroon">
+                </View>
+
+                <TextView
+                    android:id="@+id/price_hotel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/andika_new_basic_italic"
+                    android:paddingLeft="10dp"
+                    android:text="Price : ">
+                </TextView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/light_maroon">
+                </View>
+
+                <TextView
+                    android:id="@+id/rest_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/andika_new_basic_italic"
+                    android:paddingLeft="10dp"
+                    android:text="Rating : ">
+                </TextView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/light_maroon">
+                </View>
+
+                <TextView
+                    android:id="@+id/rest_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/andika_new_basic_italic"
+                    android:paddingLeft="10dp"
+                    android:text="Details : ">
+                </TextView>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+</RelativeLayout>

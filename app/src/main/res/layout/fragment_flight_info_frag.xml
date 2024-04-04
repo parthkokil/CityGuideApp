@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".signIn_signUp_Activity.signin_signup"
+    android:background="@color/white"
+    android:layout_gravity="center"
+    android:padding="15dp">
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:elevation="10dp"
+        android:visibility="gone">
+    </ProgressBar>
+
+    <ImageView
+        android:id="@+id/back_arrow"
+        android:layout_width="40dp"
+        android:layout_height="70dp"
+        android:src="@drawable/back_arrow"
+        android:paddingTop="25dp"
+        android:layout_marginLeft="10dp">
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/logo">
+    </ImageView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/info_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/first"
+            android:paddingLeft="10dp"
+            android:textColor="@color/black"
+            android:text="Flight details"
+            android:textAllCaps="true"
+            android:layout_marginTop="100dp"
+            android:textSize="25dp">
+        </TextView>
+
+        <TextView
+
+            android:id="@+id/airline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:textColor="@color/black"
+            android:text="Airline :"
+            android:layout_marginTop="40dp"
+            android:textSize="18sp"
+            android:fontFamily="@font/andika_new_basic_italic"
+            android:layout_below="@id/info_title">
+        </TextView>
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/light_maroon"
+            android:layout_below="@id/airline"
+            android:layout_marginTop="15dp">
+        </View>
+
+        <TextView
+            android:id="@+id/flight_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:textColor="@color/black"
+            android:layout_below="@id/view1"
+            android:text="Flight No : "
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:fontFamily="@font/andika_new_basic_italic">
+        </TextView>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/light_maroon"
+            android:layout_below="@id/flight_no"
+            android:layout_marginTop="15dp">
+        </View>
+
+        <TextView
+            android:id="@+id/origin_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:textColor="@color/black"
+            android:text="Origin :"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:fontFamily="@font/andika_new_basic_italic"
+            android:layout_below="@id/view2">
+        </TextView>
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/light_maroon"
+            android:layout_below="@id/origin_txt"
+            android:layout_marginTop="15dp">
+        </View>
+
+
+        <TextView
+            android:id="@+id/destination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:textColor="@color/black"
+            android:text="Destination :"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:fontFamily="@font/andika_new_basic_italic"
+            android:layout_below="@id/view3">
+        </TextView>
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/light_maroon"
+            android:layout_below="@id/destination"
+            android:layout_marginTop="15dp">
+        </View>
+
+
+        <TextView
+            android:id="@+id/arrival"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:textColor="@color/black"
+            android:text="Arrival :"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:fontFamily="@font/andika_new_basic_italic"
+            android:layout_below="@id/view4">
+        </TextView>
+
+        <View
+            android:id="@+id/view5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/light_maroon"
+            android:layout_below="@id/arrival"
+            android:layout_marginTop="15dp">
+        </View>
+
+        <TextView
+            android:id="@+id/departure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:textColor="@color/black"
+            android:text="Departure :"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:fontFamily="@font/andika_new_basic_italic"
+            android:layout_below="@id/view5">
+        </TextView>
+
+        <View
+            android:id="@+id/view6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/light_maroon"
+            android:layout_below="@id/departure"
+            android:layout_marginTop="15dp">
+        </View>
+
+        <TextView
+            android:id="@+id/frequency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:textColor="@color/black"
+            android:text="Frequency :"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:fontFamily="@font/andika_new_basic_italic"
+            android:layout_below="@id/view6">
+        </TextView>
+
+    </RelativeLayout>
+</RelativeLayout>

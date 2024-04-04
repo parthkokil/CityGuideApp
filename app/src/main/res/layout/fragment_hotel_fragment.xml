@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".signIn_signUp_Activity.signin_signup"
+    android:background="@color/white"
+    android:layout_gravity="center"
+    android:padding="15dp">
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:elevation="10dp"
+        android:visibility="gone">
+    </ProgressBar>
+
+    <ImageView
+        android:id="@+id/back_arrow"
+        android:layout_width="40dp"
+        android:layout_height="70dp"
+        android:src="@drawable/back_arrow"
+        android:paddingTop="25dp"
+        android:layout_marginLeft="10dp">
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/logo">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/hotels_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/first"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+        android:text="Hotels"
+        android:textAllCaps="true"
+        android:layout_marginTop="100dp"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/desc_hotel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hotels_title"
+        android:textSize="14sp"
+        android:textColor="@color/light_maroon"
+        android:paddingLeft="10dp"
+        android:text="NOTE : Click on the Categories to Explore More">
+    </TextView>
+
+    <SearchView
+        android:layout_below="@id/desc_hotel"
+        android:id="@+id/hotels_searchBar"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/searchbar_bg"
+        android:queryHint="Search Hotels"
+        android:closeIcon="@drawable/cancel_image"
+        android:searchIcon="@drawable/search_image"
+        android:iconifiedByDefault="false">
+    </SearchView>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_below="@+id/hotels_searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/shimmer_hotel">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/shimmer_hotel_layout">
+            </include>
+
+            <include layout="@layout/shimmer_hotel_layout">
+            </include>
+
+            <include layout="@layout/shimmer_hotel_layout">
+            </include>
+
+            <include layout="@layout/shimmer_hotel_layout">
+            </include>
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="250dp"
+        android:id="@+id/hotelview"
+        android:visibility="gone">
+    </androidx.recyclerview.widget.RecyclerView>
+</RelativeLayout>
