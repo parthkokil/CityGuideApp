@@ -76,7 +76,7 @@
                 android:layout_width="25dp"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/nav_fav_selected">
+                android:src="@drawable/nav_fav">
             </ImageView>
 
             <TextView
@@ -109,7 +109,7 @@
                 android:layout_width="25dp"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/nav_person_selected">
+                android:src="@drawable/nav_person">
             </ImageView>
 
             <TextView

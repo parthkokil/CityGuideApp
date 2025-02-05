@@ -48,6 +48,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.concurrent.ExecutionException;
 
 import es.dmoral.toasty.Toasty;
 
@@ -59,8 +60,6 @@ import es.dmoral.toasty.Toasty;
  * create an instance of this fragment.
  */
 public class home_fragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -77,7 +76,10 @@ public class home_fragment extends Fragment {
     private String displayName,greetingUser;
     private ImageSlider imageSlider;
 
-    private static final String API_KEY = "5ac9d5c810e0bfac7f9ecf22a3d89c36";
+    // City-Name fix ahe Nashik for fetching weather-result
+    private TextView weather_result;
+    String url;
+    final String[] temp = {""};
     private static final String CITY_NAME = "Nashik";
 
     boolean isInMyFavorite = false;
@@ -130,6 +132,11 @@ public class home_fragment extends Fragment {
         greeting_text = fragment_home.findViewById(R.id.greeting_text);
         imageSlider = fragment_home.findViewById(R.id.imageSlider);
 
+        weather_result = fragment_home.findViewById(R.id.weather_result);
+
+        // Calling function which will show the weather
+        displayWeather(CITY_NAME);
+
         // Code for Image Slider
         ArrayList<SlideModel> imageList_rest = new ArrayList<>(); // Create image list
 
@@ -142,6 +149,8 @@ public class home_fragment extends Fragment {
         imageSlider.setSlideAnimation(AnimationTypes. FOREGROUND_TO_BACKGROUND);
         ImageSlider imageSlider_rest = fragment_home.findViewById(R.id.imageSlider);
         imageSlider_rest.setImageList(imageList_rest);
+
+
 
 
         // Setting On CLick Listener for Categories
@@ -239,6 +248,24 @@ public class home_fragment extends Fragment {
                 Toasty.error(getActivity(), "Can't Fetch Username, Please Update your Profile", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void displayWeather(String cityname){
+        String city = cityname.toString();
+        try {
+            url ="https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=5698aa8e12bfe1f9a98cbb0c75d2ea92";
+            // Create object of our class "getweather"
+            getWeather weather = new getWeather(weather_result);
+            temp[0] = weather.execute(url).get();
+        }catch (ExecutionException e){
+            e.printStackTrace();
+        }catch (InterruptedException ie){
+            ie.printStackTrace();
+        }
+        if (temp[0]==null){
+            weather_result.setText("No Data Found");
+        }
+
     }
 
 //    private void checkIsFavorite(){

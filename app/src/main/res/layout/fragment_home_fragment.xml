@@ -84,15 +84,20 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/greeting_text"></TextView>
 
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="50dp"
+                <TextView
+                    android:id="@+id/weather_result"
+                    android:layout_width="70dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/sun_temp_image"
-                    android:layout_marginRight="15dp"
+                    android:text="degrees"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="3dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"></ImageView>
+                    app:layout_constraintTop_toTopOf="parent"/>
 
 
 
