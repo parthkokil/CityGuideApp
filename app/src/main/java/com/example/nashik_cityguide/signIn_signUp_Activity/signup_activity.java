@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.nashik_cityguide.PasswordHashingSecurity;
 import com.example.nashik_cityguide.ProgressHandler;
 import com.example.nashik_cityguide.R;
 import com.example.nashik_cityguide.ReadWriteUserDetails;
@@ -58,6 +59,9 @@ public class signup_activity extends AppCompatActivity {
     private ProgressBar progress_bar;
     private ImageView back_img;
     private Button signup_button;
+
+    private String hashedPassword;
+
     FirebaseAuth mAuth;
     private  PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
 
@@ -195,30 +199,12 @@ public class signup_activity extends AppCompatActivity {
                     TextView_username_layout.setError("Enter the Username");
                     TextView_username_layout.requestFocus();
                 } else {
-//                    Intent intent = new Intent(signup_activity.this, enter_otp.class);
-//                    intent.putExtra("mobile number",text_mobile);
-//                    intent.putExtra("username",text_username);
-//                    intent.putExtra("email",text_email);
-//                    intent.putExtra("dob",text_dob);
-//                    intent.putExtra("gender",text_gender);
-//                    intent.putExtra("pass",text_pass);
-//                    startActivity(intent);
-
 
                     registerUser(text_username, text_email, text_mobile, text_dob, text_gender, text_pass);
-                    //otpSent();
-
-
                 }
             }
         });
     }
-
-
-
-
-
-
 
     // Register User Using the Credentials entered
     private void registerUser(String text_name, String text_email, String text_mobile, String text_dob, String text_gender, String text_pass) {
@@ -232,8 +218,12 @@ public class signup_activity extends AppCompatActivity {
                     //progress_bar.setVisibility(View.VISIBLE);
                     FirebaseUser firebaseuser = auth.getCurrentUser();
 
+//                  Encrypting the password using "bcrypt" hashing technique
+                    hashedPassword = PasswordHashingSecurity.hashPassword(text_pass);
+                    Log.d("Hashed Password : ", " "+hashedPassword);
+
                     // Enter User Data into the Firebase Realtime Database
-                    ReadWriteUserDetails writeuserdetails = new ReadWriteUserDetails(text_name, text_email, text_mobile, text_dob, text_gender, text_pass);
+                    ReadWriteUserDetails writeuserdetails = new ReadWriteUserDetails(text_name, text_email, text_mobile, text_dob, text_gender, hashedPassword);
 
                     //Extracting user reference from database for "Registered Users"
                     DatabaseReference refernceProfile = FirebaseDatabase.getInstance().getReference("Registered Users");

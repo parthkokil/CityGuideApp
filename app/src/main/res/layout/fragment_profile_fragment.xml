@@ -441,7 +441,6 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"></ImageView>
 
-
                         <TextView
                             android:id="@+id/update_profile_txt"
                             android:layout_width="wrap_content"
@@ -474,7 +473,6 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent"></ImageView>
 
-
                         <ImageView
                             android:id="@+id/change_pass_icon"
                             android:layout_width="50dp"
@@ -484,7 +482,6 @@
                             android:src="@drawable/password_image"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/update_profile_icon"></ImageView>
-
 
                         <TextView
                             android:id="@+id/change_pass_txt"
@@ -518,54 +515,6 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/update_profile_arrow"></ImageView>
 
-
-                        <ImageView
-                            android:id="@+id/profile_img_icon"
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="22dp"
-                            android:foregroundGravity="center"
-                            android:src="@drawable/photo_image"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/change_pass_icon"></ImageView>
-
-
-                        <TextView
-                            android:id="@+id/profile_img_txt"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:gravity="center"
-                            android:text="Update Profile Photo"
-                            android:textColor="@color/black"
-                            android:textSize="16sp"
-                            app:layout_constraintStart_toEndOf="@+id/profile_img_icon"
-                            app:layout_constraintTop_toBottomOf="@+id/change_pass_view1"></TextView>
-
-                        <View
-                            android:id="@+id/profile_img_view1"
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginLeft="50dp"
-                            android:background="@color/light_maroon"
-                            app:layout_constraintStart_toEndOf="@+id/profile_img_icon"
-                            app:layout_constraintTop_toBottomOf="@+id/profile_img_icon">
-                        </View>
-
-                        <ImageView
-                            android:id="@+id/profile_img_arrow"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginRight="10dp"
-                            android:background="@drawable/right_arrow"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/change_pass_arrow">
-                        </ImageView>
-
-
-
                         <ImageView
                             android:id="@+id/update_email_icon"
                             android:layout_width="50dp"
@@ -574,8 +523,7 @@
                             android:foregroundGravity="center"
                             android:src="@drawable/update_email"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/profile_img_icon"></ImageView>
-
+                            app:layout_constraintTop_toBottomOf="@+id/change_pass_icon"></ImageView>
 
                         <TextView
                             android:id="@+id/update_email_txt"
@@ -587,8 +535,7 @@
                             android:textColor="@color/black"
                             android:textSize="16sp"
                             app:layout_constraintStart_toEndOf="@+id/update_email_icon"
-                            app:layout_constraintTop_toBottomOf="@+id/profile_img_view1"></TextView>
-
+                            app:layout_constraintTop_toBottomOf="@+id/change_pass_view1"></TextView>
 
                         <ImageView
                             android:id="@+id/update_email_arrow"
@@ -598,9 +545,8 @@
                             android:layout_marginRight="10dp"
                             android:background="@drawable/right_arrow"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/profile_img_arrow">
+                            app:layout_constraintTop_toBottomOf="@+id/change_pass_arrow">
                         </ImageView>
-
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 

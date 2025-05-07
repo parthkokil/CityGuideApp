@@ -23,6 +23,10 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import org.mindrot.jbcrypt.BCrypt;
 
 import es.dmoral.toasty.Toasty;
 
@@ -141,6 +145,9 @@ public class change_password extends AppCompatActivity {
         if (TextUtils.isEmpty(userPassNew)){
             new_pass.setError("Please enter the new password");
             new_pass.requestFocus();
+        } else if (!userPassNew.matches("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@#$%^&+=!])(?=\\S+$).{7,}$")) {
+            new_pass.setError("Must have 1 uppercase, 1 digit, 1 special character, and be at least 7 characters.");
+            new_pass.requestFocus();
         } else if (TextUtils.isEmpty(userPassConform)) {
             con_new_pass.setError("Please enter the same password as entered above");
             con_new_pass.requestFocus();
@@ -153,14 +160,24 @@ public class change_password extends AppCompatActivity {
         } else {
             progressHandler.show();
 
+//            Hash the password using Bcrypt
+            String hashedPassword = BCrypt.hashpw(userPassNew, BCrypt.gensalt());
+
             firebaseuser.updatePassword(userPassNew).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()){
-                        Toasty.success(change_password.this, "Password Changed Successfully", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(change_password.this,successful_pass_screen.class);
-                        startActivity(intent);
-                        finish();
+                        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Registered Users").child(firebaseuser.getUid());
+                        databaseReference.child("pass").setValue(hashedPassword)
+                                        .addOnSuccessListener(aVoid -> {
+                                            Toasty.success(change_password.this, "Password Changed Successfully", Toast.LENGTH_SHORT).show();
+                                            Intent intent = new Intent(change_password.this,successful_pass_screen.class);
+                                            startActivity(intent);
+                                            finish();
+                                        })
+                                .addOnFailureListener(e->{
+                                    Toasty.error(change_password.this, "Error Updating Password.", Toast.LENGTH_SHORT).show();
+                                });
                     } else {
                         try {
                             throw task.getException();
