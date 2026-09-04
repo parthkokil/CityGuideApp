@@ -190,7 +190,7 @@ public class hotel_info_frag extends Fragment {
 
         reference.child(firebaseUser.getUid()).child(name).addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@android.support.annotation.NonNull DataSnapshot snapshot) {
+            public void onDataChange(@androidx.annotation.NonNull DataSnapshot snapshot) {
                 isFav = snapshot.exists();
                 if(isFav){
                     fav.setBackgroundResource(R.drawable.nav_fav_selected);
@@ -200,7 +200,7 @@ public class hotel_info_frag extends Fragment {
             }
 
             @Override
-            public void onCancelled(@android.support.annotation.NonNull DatabaseError error) {
+            public void onCancelled(@androidx.annotation.NonNull DatabaseError error) {
                 Toasty.error(getActivity(), "Something went wrong", Toast.LENGTH_SHORT).show();
             }
         });
@@ -215,7 +215,7 @@ public class hotel_info_frag extends Fragment {
 
         reference.child(firebaseUser.getUid()).child(name).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
-            public void onComplete(@android.support.annotation.NonNull Task<Void> task) {
+            public void onComplete(@androidx.annotation.NonNull Task<Void> task) {
                 if (task.isSuccessful()){
                     Toast.makeText(getContext(), "Remove from Your Favourite. Thank You!", Toast.LENGTH_SHORT).show();
                     isFav = false;

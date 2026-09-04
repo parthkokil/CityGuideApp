@@ -67,9 +67,6 @@
             android:name=".Update_Activity.update_profile"
             android:exported="false" />
         <activity
-            android:name=".Update_Activity.update_profile_photo"
-            android:exported="false" />
-        <activity
             android:name=".Update_Activity.update_email"
             android:exported="false" />
         <activity

@@ -48,7 +48,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.concurrent.ExecutionException;
+
 
 import es.dmoral.toasty.Toasty;
 
@@ -252,20 +252,10 @@ public class home_fragment extends Fragment {
 
     private void displayWeather(String cityname){
         String city = cityname.toString();
-        try {
-            url ="https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=5698aa8e12bfe1f9a98cbb0c75d2ea92";
-            // Create object of our class "getweather"
-            getWeather weather = new getWeather(weather_result);
-            temp[0] = weather.execute(url).get();
-        }catch (ExecutionException e){
-            e.printStackTrace();
-        }catch (InterruptedException ie){
-            ie.printStackTrace();
-        }
-        if (temp[0]==null){
-            weather_result.setText("No Data Found");
-        }
-
+        url ="https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=5698aa8e12bfe1f9a98cbb0c75d2ea92";
+        // Create object of our class "getweather" and execute asynchronously
+        getWeather weather = new getWeather(weather_result);
+        weather.execute(url);
     }
 
 //    private void checkIsFavorite(){

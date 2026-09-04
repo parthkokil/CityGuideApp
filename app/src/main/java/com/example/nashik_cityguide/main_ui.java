@@ -1,14 +1,16 @@
 package com.example.nashik_cityguide;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.Network;
-import android.net.NetworkInfo;
+import android.net.NetworkCapabilities;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,8 +71,8 @@ public class main_ui extends AppCompatActivity {
                     favimage.setImageResource(R.drawable.nav_fav);
                     profileimage.setImageResource(R.drawable.nav_person);
 
-                    favlayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-                    profilelayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                    favlayout.setBackgroundColor(ContextCompat.getColor(main_ui.this, android.R.color.transparent));
+                    profilelayout.setBackgroundColor(ContextCompat.getColor(main_ui.this, android.R.color.transparent));
 
                     // Select Home Tab
                     hometext.setVisibility(View.VISIBLE);
@@ -102,8 +104,8 @@ public class main_ui extends AppCompatActivity {
                     homeimage.setImageResource(R.drawable.nav_home);
                     profileimage.setImageResource(R.drawable.nav_person);
 
-                    homelayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-                    profilelayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                    homelayout.setBackgroundColor(ContextCompat.getColor(main_ui.this, android.R.color.transparent));
+                    profilelayout.setBackgroundColor(ContextCompat.getColor(main_ui.this, android.R.color.transparent));
 
                     // Select Fav Tab
                     favtext.setVisibility(View.VISIBLE);
@@ -135,8 +137,8 @@ public class main_ui extends AppCompatActivity {
                     homeimage.setImageResource(R.drawable.nav_home);
                     favimage.setImageResource(R.drawable.nav_fav);
 
-                    homelayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-                    favlayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                    homelayout.setBackgroundColor(ContextCompat.getColor(main_ui.this, android.R.color.transparent));
+                    favlayout.setBackgroundColor(ContextCompat.getColor(main_ui.this, android.R.color.transparent));
 
                     // Select Profile Tab
                     profiletext.setVisibility(View.VISIBLE);
@@ -155,10 +157,17 @@ public class main_ui extends AppCompatActivity {
             }
         });
 
-        if (!isConnected(this)){
+        if (!isConnected()){
             showInternetDialog();
         }
 
+        // Modern back press handling (replaces deprecated onBackPressed())
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                doubleBackPressExitHandler.onBackPressed();
+            }
+        });
     }
 
     @SuppressLint("MissingInflatedId")
@@ -169,7 +178,7 @@ public class main_ui extends AppCompatActivity {
         view.findViewById(R.id.try_again).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!isConnected(main_ui.this)){
+                if (!isConnected()){
                     showInternetDialog();
                 } else {
                     Toasty.success(main_ui.this, "Reconnected Successfully", Toast.LENGTH_SHORT).show();
@@ -183,17 +192,18 @@ public class main_ui extends AppCompatActivity {
         alertDialog.show();
     }
 
-    public void onBackPressed() {
-        doubleBackPressExitHandler.onBackPressed();
-    }
+    private boolean isConnected(){
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivityManager == null) return false;
 
-    private boolean isConnected(main_ui main_ui){
-        ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext().getSystemService(context.CONNECTIVITY_SERVICE);
+        Network activeNetwork = connectivityManager.getActiveNetwork();
+        if (activeNetwork == null) return false;
 
-        NetworkInfo wifiConn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-        NetworkInfo mobileConn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+        NetworkCapabilities capabilities = connectivityManager.getNetworkCapabilities(activeNetwork);
+        if (capabilities == null) return false;
 
-        return (wifiConn != null && wifiConn.isConnected()) || (mobileConn != null && mobileConn.isConnected());
-
+        return capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)
+                || capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)
+                || capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET);
     }
 }
