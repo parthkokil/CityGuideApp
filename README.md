@@ -15,16 +15,51 @@
 
 ---
 
-## 📸 Screenshots
+## 📸 App Preview
 
-<!-- Replace placeholders below with actual screenshots once captured -->
-| Splash Screen | Home Screen | Categories |
-|:---:|:---:|:---:|
-| ![Splash](docs/screenshots/splash.png) | ![Home](docs/screenshots/home.png) | ![Categories](docs/screenshots/categories.png) |
+<p align="center">
+  <em>Here's a glimpse of the Nashik City Guide experience</em>
+</p>
 
-| Restaurant List | Hotel Detail | Profile |
-|:---:|:---:|:---:|
-| ![Restaurants](docs/screenshots/restaurants.png) | ![Hotel](docs/screenshots/hotel_detail.png) | ![Profile](docs/screenshots/profile.png) |
+<table align="center">
+  <tr>
+    <td align="center"><strong>🚀 Splash Screen</strong></td>
+    <td align="center"><strong>🏠 Home / Dashboard</strong></td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="docs/screenshots/splash.jpg" alt="Splash Screen" width="250"/>
+    </td>
+    <td align="center">
+      <img src="docs/screenshots/home.jpg" alt="Home Screen" width="250"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><em>Animated welcome with<br/>colorful branding</em></td>
+    <td align="center"><em>Personalised greeting, weather,<br/>and quick-access categories</em></td>
+  </tr>
+</table>
+
+<br/>
+
+<table align="center">
+  <tr>
+    <td align="center"><strong>📂 Categories</strong></td>
+    <td align="center"><strong>👤 Profile</strong></td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="docs/screenshots/categories.jpg" alt="Categories Screen" width="250"/>
+    </td>
+    <td align="center">
+      <img src="docs/screenshots/profile.jpg" alt="Profile Screen" width="250"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><em>Browse Transport, Tourist Places,<br/>Hotels, Restaurants &amp; more</em></td>
+    <td align="center"><em>Manage profile details,<br/>edit info &amp; app settings</em></td>
+  </tr>
+</table>
 
 ---
 
@@ -147,8 +182,8 @@ CityGuideApp/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/nashik-city-guide.git
-cd nashik-city-guide
+git clone https://github.com/parthkokil/CityGuideApp.git
+cd CityGuideApp
 ```
 
 ### 2. Firebase Setup
